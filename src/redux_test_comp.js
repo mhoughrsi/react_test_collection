@@ -21,8 +21,12 @@ class ReduxTest extends Component {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ fetchBasic }, dispatch);
-  }
+function mapStateToProps(state) {
+    return { basic: state.basicReducer };
+}
 
-export default connect(null, mapDispatchToProps)(ReduxTest);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ fetchBasic: fetchBasic }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ReduxTest);
