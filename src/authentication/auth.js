@@ -1,13 +1,15 @@
 
 import auth0 from 'auth0-js';
-import history from './history';
+import history from '../history';
 
 export default class Auth {
     // Please use your own credentials here
     auth0 = new auth0.WebAuth({
       domain: 'matthough.auth0.com',
       clientID: 'MLufEamnVhML5SZOndE7Ic0oXOjFrEWk',
-      redirectUri: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/callback' : 'https://www.matthewjosephhough.herokuapp.com',
+      redirectUri: process.env.NODE_ENV === 'development' 
+        ? 'http://localhost:3000/callback' 
+        : 'https://www.matthewjosephhough.herokuapp.com',
       audience: 'https://matthough.auth0.com/userinfo',
       responseType: 'token id_token',
       scope: 'openid'

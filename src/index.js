@@ -4,7 +4,17 @@ import './index.css';
 import App from './App';
 import Routes from './Routes';
 import registerServiceWorker from './registerServiceWorker';
-// import '@appbaseio/reactivesearch/dist/css/style.min.css';
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import ReduxPromise from "redux-promise";
+import reducers from './reducers';
 
-ReactDOM.render(<Routes />, document.getElementById('root'));
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+
+ReactDOM.render(
+    <Provider store={createStoreWithMiddleware(reducers)}>
+        <Routes />
+    </Provider>, 
+    document.getElementById('root')
+);
 registerServiceWorker();

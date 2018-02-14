@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import Chat from './Chat';
+import Chat from './websockets/Chat';
+import ReduxTest from './redux_test_comp';
 import './App.css';
 import {
   ReactiveBase,
@@ -35,6 +36,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <Chat />
+        <ReduxTest />
       </div>
     );
   }
