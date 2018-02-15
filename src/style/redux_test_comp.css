@@ -1,0 +1,7 @@
+.test_container {
+    height: 260px;
+    width: 80%;
+    overflow:auto;
+    margin: 0 auto;
+    border: 3px solid #ccc;
+}

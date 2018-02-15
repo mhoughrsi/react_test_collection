@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './style/logo.svg';
 import Chat from './websockets/Chat';
-import ReduxTest from './redux_test_comp';
-import './App.css';
+import ReduxTest from './containers/redux_test_comp';
+import './style/App.css';
 import {
   ReactiveBase,
   CategorySearch,
   RatingsFilter,
   ResultCard
 } from '@appbaseio/reactivesearch';
+
+import { Switch, Route } from 'react-router'
+import Link from 'react-router-dom/Link';
 // import history from './history';
 
 // Todo on application : 
@@ -28,15 +31,20 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {/* <Link to="/home/chat">Chat Component</Link>
+        <Link to="/home/redux">Redux Test</Link> */}
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Chat />
-        <ReduxTest />
+        <Switch>
+          <Route path="/home/chat" component={Chat} />
+          <Route path="/home/redux" component={ReduxTest} />
+        </Switch>
+        {/* <Chat /> */}
+        {/* <ReduxTest /> */}
       </div>
     );
   }
