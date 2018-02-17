@@ -23,6 +23,7 @@ class Home extends Component {
             <div className="nav-items">
               <Link to="/home/chat">Chat Component</Link>
               <Link to="/home/redux">Redux Test</Link>
+              <Link to="/home/hotgrid">Hot Grid</Link>
             </div>
               <a
                 style={{ cursor: 'pointer' }}
@@ -38,17 +39,19 @@ class Home extends Component {
         {
           !isAuthenticated() && (
             <div className="container column login-screen">
-              <h5 className="login-title">React Test Collection</h5>
-              <h5>
-                <a
-                  style={{ cursor: 'pointer' }}
-                  className="login-button"
-                  onClick={this.login}
-                >
-                  Log In
-                </a>
-                {' '}
-              </h5>
+              <div className="login-container">
+                <h5 className="login-title">React Test Collection</h5>
+                <h5>
+                  <a
+                    style={{ cursor: 'pointer' }}
+                    className="login-button"
+                    onClick={this.login}
+                  >
+                    Log In
+                  </a>
+                  {' '}
+                </h5>
+              </div>
             </div>
           )
         }
