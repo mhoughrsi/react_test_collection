@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import HotTable from 'react-handsontable';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { getCountries } from "../actions/index";
+import { getUsers } from "../actions/index";
 
 import './hotgrid.css';
 
@@ -14,7 +14,7 @@ class HotGrid extends Component {
     }
 
     componentWillMount() {
-        this.props.getCountries();
+        this.props.getUsers();
     }
 
     render() {
@@ -41,11 +41,11 @@ class HotGrid extends Component {
 }
 
 function mapStateToProps(state) {
-    return { countries: state.countryReducer };
+    return { users: state.userReducer };
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ getCountries: getCountries }, dispatch);
+    return bindActionCreators({ getUsers: getUsers }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HotGrid);

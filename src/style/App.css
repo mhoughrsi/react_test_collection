@@ -22,10 +22,9 @@
   align-items:center;
   flex-flow:column;
   background:#fff;
-  border: 1px solid #ccc;
-  -webkit-box-shadow: 4px 7px 3px -1px rgba(161,161,161,0.68);
-  -moz-box-shadow: 4px 7px 3px -1px rgba(161,161,161,0.68);
-  box-shadow: 4px 7px 3px -1px rgba(161,161,161,0.68);
+  -webkit-box-shadow: 4px 5px 3px -1px rgba(161,161,161,0.68);
+  -moz-box-shadow: 4px 5px 3px -1px rgba(161,161,161,0.68);
+  box-shadow: 4px 5px 3px -1px rgba(161,161,161,0.68);
 }
 
 .login-title {
@@ -41,10 +40,7 @@
   justify-content: center;
   align-items:center;
   flex-flow:column;
-  background-image: url(https://i.pinimg.com/originals/ee/47/1c/ee471ca43dd21d3749f89e312692013e.jpg);
-  background-size:     cover;                      /* <------ */
-  background-repeat:   no-repeat;
-  background-position: center center;
+  background:#222;
 }
 
 .login-button {
